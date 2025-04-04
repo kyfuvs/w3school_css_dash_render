@@ -1,0 +1,85 @@
+** bash shell
+   1. mkdir project
+   2. cd project 
+   3. python -m venv .venv 
+   4. code .
+-- 
+** vs code
+   1. New Terminal 
+   2. .venv\scripts\activate.ps1 
+   3. (.venv) $ pip install dash flask gunicorn
+   4. (.venv) $ pip freeze > requirements.txt
+** file structure
+   project
+     |-.venv 
+     |-.gitignore => .venv
+     |-Procfile => web: gunicorn --bind 0.0.0.0:$PORT app:server
+     |-requirements.txt
+     |-app.py 
+** file content 
+1. .gitignore
+--
+.venv 
+--
+
+2. Procfile 
+--
+web: gunicorn --bind 0.0.0.0:$PORT app:server
+-- 
+
+3. app.py 
+--
+import dash
+from dash import html
+import dash_bootstrap_components as dbc
+
+
+app = dash.Dash(
+    __name__,
+    title='Responsive-web-design',
+    assets_folder='./assets',
+    external_stylesheets=[dbc.themes.CYBORG, dbc.icons.BOOTSTRAP],
+    suppress_callback_exceptions=True
+)
+server = app.server  # Required for Gunicorn
+
+app.layout = html.Div([
+    html.P('Home')
+   
+])
+
+
+if __name__ == "__main__":
+       app.run_server(debug=False) 
+
+========================
+** Github 
+1. Initialize Git in your project folder:
+   - git init 
+   - git add .
+   - git commit -m "init commit" 
+2. Create a new repository on GitHub. 
+3. Link the remote repository:
+   - git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+4. Push your code:
+   - git push -u origin master 
+
+==========================
+** Deploy to Render 
+1. Go to Render.
+2. Sign up/log in with your GitHub account.
+3. Click New Web Service.
+4. Connect your GitHub repository.
+5. Set up your deployment:
+   A. Build Command:
+      - pip install -r requirements.txt
+   B. Start Command:
+      - gunicorn app:server
+6. Click Create Web Service and wait for the deployment. 
+
+======================
+**  Test Your Deployed App 
+1. Once deployed, Render provides a URL like:
+   - https://your-app-name.onrender.com
+
+    
