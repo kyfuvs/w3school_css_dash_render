@@ -1,0 +1,14 @@
+.custom-offcanvas {
+    margin-top: 15vh; /* 15% of the viewport height */
+    width: 20vw !important;
+    background-color: #101111 !important;
+  }
+
+  /* For screens smaller than 428px */
+@media (max-width: 428px) {
+  .custom-offcanvas {
+    margin-top: 12vh; /* 12% of the viewport height */
+    width: 50vw !important;  /* Set the offcanvas width to 80% of the screen width */
+    background-color: #101111 !important;
+  }
+}

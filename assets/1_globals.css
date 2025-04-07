@@ -1,0 +1,9 @@
+/* assets/1_globals.css */
+.text-blue {
+    color: #0d6efd !important;
+  }
+
+a.text-blue {
+    color: #0d6efd !important;
+    font-weight: bold;
+  }

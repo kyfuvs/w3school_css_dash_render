@@ -1,18 +1,16 @@
 import dash_bootstrap_components as dbc
 from dash import callback,Input, Output, State, html
 from dash_bootstrap_components._components.Container import Container
-from components.menuBar.home import home_layout
-from components.menuBar.css import css_layout
-from components.menuBar.bs import bs_layout
 
 
 W3SCHOOL_LOGO = "assets/images/w3schools-logo.png"
+# W3SCHOOL_LOGO = "https://www.w3schools.com/images/w3schools_logo_436_2.png"
 
 menu_bar = dbc.Nav(
     [
-        dbc.NavItem(dbc.NavLink("Home", href="/", className="text-info")),
-        dbc.NavItem(dbc.NavLink("CSS", href="/css", className="text-info")),
-        dbc.NavItem(dbc.NavLink("BS-5", href="/bs5", className="text-info")),
+        dbc.NavItem(dbc.NavLink("Home", href="/", className="text-blue")),
+        dbc.NavItem(dbc.NavLink("CSS HOME", href="/css_basic/home", className="text-blue")),
+        dbc.NavItem(dbc.NavLink("BS-5", href="/bs5", className="text-blue")),
     ],
     className="mt-3 mt-md-0"
 )
@@ -26,8 +24,10 @@ navbar_layout = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
+                        # dbc.Col(html.Img(src=W3SCHOOL_LOGO, height="30px")),
                         dbc.Col(html.Img(src="/assets/images/w3schools-logo.png", height="30px")),
                         # dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
+                        # dbc.Col(html.Img(src=W3SCHOOL_LOGO, height="30px")),
                         dbc.Col(dbc.NavbarBrand("W3Schools", className="ms-3 me-5 text-success text-opacity-55")),
                     ],
                     align="center",
