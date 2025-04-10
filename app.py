@@ -5,10 +5,8 @@ from components.navbar import navbar_layout
 from components.content import content_layout
 from pageFolder.home import home_layout
 from pageFolder.cssFolder.css import css_layout
-from pageFolder.cssFolder.css_1_basic.css_1_basic_1_home import css_1_basic_1_home_layout
-
-# import pageFolder.cssFolder.css_sidebarFolder.toggler_css_sidebar
-import pageFolder.cssFolder.css_sidebarFolder.toggler_css_sidebar
+from app_link_css import app_link_CSS
+from app_link_bs import app_link_BS
 
 app = dash.Dash(
     __name__,
@@ -32,8 +30,17 @@ app.layout = html.Div([
 def toggle_pages(pathname):
     if pathname == '/':
        return [home_layout]
-    elif pathname == '/css_basic/home':
-        return[css_1_basic_1_home_layout]
+    # elif pathname == '/css_basic/home':
+    #     return[css_1_basic_1_home_layout]
+    elif pathname.startswith('/css/'):
+        return [app_link_CSS(pathname)]
+    # elif pathname == '/bs_basic/home':
+    #     return[bs_1_basic_1_home_layout]
+    # elif pathname == '/bs_basic/get_start':
+    #     return[bs_1_basic_2_get_start_layout]
+    elif pathname.startswith('/bs/'):
+        return [app_link_BS(pathname)]
+
     else:
         return [html.P('404', className='fw-bold',style={'color': '#0d6efd'})] 
 if __name__ == "__main__":

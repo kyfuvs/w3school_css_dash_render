@@ -10,7 +10,7 @@ dd_css_1_basic_layout = dbc.DropdownMenu(
         dbc.DropdownMenuItem("CSS HOME", 
                              id="dd-css-1-basic-1-home", 
                              n_clicks=0,
-                             href="/css_basic/home"),
+                             href="/css/css_basic/home"),
         dbc.DropdownMenuItem("Item 2"),
         dbc.DropdownMenuItem("Item 3"),
         dd_css_1_basic_7_color_layout,

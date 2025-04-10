@@ -8,9 +8,9 @@ W3SCHOOL_LOGO = "assets/images/w3schools-logo.png"
 
 menu_bar = dbc.Nav(
     [
-        dbc.NavItem(dbc.NavLink("Home", href="/", className="text-blue")),
-        dbc.NavItem(dbc.NavLink("CSS HOME", href="/css_basic/home", className="text-blue")),
-        dbc.NavItem(dbc.NavLink("BS-5", href="/bs5", className="text-blue")),
+        dbc.NavItem(dbc.NavLink("Home", href="/", id='nav-home', n_clicks=0, className="text-blue")),
+        dbc.NavItem(dbc.NavLink("CSS HOME", id='nav-css', n_clicks=0, href="/css/css_basic/home", className="text-blue")),
+        dbc.NavItem(dbc.NavLink("BS-5", id='nav-BS-5', n_clicks=0,href="/bs/bs_basic/home", className="text-blue")),
     ],
     className="mt-3 mt-md-0"
 )
@@ -59,10 +59,15 @@ navbar_layout = dbc.Navbar(
 # add callback for toggling the collapse on small screens
 @callback(
     Output("navbar-collapse", "is_open"),
-    [Input("navbar-toggler", "n_clicks")],
+    [
+     Input("navbar-toggler", "n_clicks"),
+     Input("nav-home", "n_clicks"),
+     Input("nav-css", "n_clicks"),
+     Input("nav-BS-5", "n_clicks"),
+    ],
     [State("navbar-collapse", "is_open")],
 )
-def toggle_navbar_collapse(n, is_open):
-    if n:
+def toggle_navbar_collapse(n0,n1,n2,n3, is_open):
+    if n0 or n1 or n2 or n3:
         return not is_open
     return is_open
