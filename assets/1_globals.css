@@ -10,10 +10,10 @@ a.text-blue {
 
   @media (max-width: 428px) {
     p {
-      font-size: x-small;
+      font-size: small;
     }
     h3 {
-      font-size: small;
+      font-size:medium;
     }
   }
   

@@ -68,4 +68,4 @@ bs_1_basic_1_home_layout=html.Div([
       className='mt-3 '
     ),
 
-])
+],style={'height': '100vh', 'overflowY': 'auto'})

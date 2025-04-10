@@ -18,6 +18,10 @@ dd_bs_1_basic_layout = dbc.DropdownMenu(
                              id="dd-bs-1-basic-3-container", 
                              n_clicks=0,
                              href="/bs/bs_basic/container"),
+         dbc.DropdownMenuItem("BS-5 Grid Basic", 
+                             id="dd-bs-1-basic-4-grid", 
+                             n_clicks=0,
+                             href="/bs/bs_basic/grid"),
     
     ],
 )

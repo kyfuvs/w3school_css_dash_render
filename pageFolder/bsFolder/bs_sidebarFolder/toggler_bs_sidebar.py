@@ -41,12 +41,12 @@ toggler_bs_sidebar_layout = html.Div(
      Input("dd-bs-1-basic-1-home", "n_clicks"),
      Input("dd-bs-1-basic-2-get-start", "n_clicks"),
      Input('dd-bs-1-basic-3-container','n_clicks'),
-    #  Input("dd-bs-1-basic-2-get-start", "n_clicks"),
+     Input("dd-bs-1-basic-4-grid", "n_clicks"),
     #  Input('dd-bs-1-basic-3-container','n_clicks'),
     ],    
     [State("offcanvas-bs", "is_open")],
 )
-def toggle_dd_offcanvas(n0,n1,n2,n3, is_open):
-    if n0 or n1 or n2 or n3:
+def toggle_dd_offcanvas(n0,n1,n2,n3,n4, is_open):
+    if n0 or n1 or n2 or n3 or n4:
         return not is_open
     return is_open
